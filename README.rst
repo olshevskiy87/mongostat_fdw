@@ -123,9 +123,9 @@ usage
 * get "test" database collections statistics
 
 ::
+
     $$ select ns as tbl_name, size, "storageSize", count
        from mongo_coll_stat;
-
 
           tbl_name       | size | storageSize | count
     ---------------------+------+-------------+-------
