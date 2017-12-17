@@ -62,7 +62,7 @@ installation
         $$ CREATE FOREIGN TABLE mongo_db_stat (
             "avgObjSize" NUMERIC,
             collections INT,
-            "dataFileVersion" JSONB, -- for Postgres 9.4+ or JSON, or (at least) TEXT
+            "dataFileVersion" JSONB, -- JSONB for Postgres 9.4+ or JSON, or (at least) TEXT
             "extentFreeList" JSONB,  -- Mongo 3.0.0+
             "dataSize" NUMERIC,
             db TEXT,
@@ -73,8 +73,7 @@ installation
             "numExtents" INT,
             objects INT,
             ok NUMERIC,
-            "storageSize" NUMERIC,
-            "extentFreeList" JSONB   -- for Postgres 9.4+ or JSON, or (at least) TEXT
+            "storageSize" NUMERIC
         ) SERVER mongostat_fdw_db OPTIONS (
             -- uri 'mongodb://127.0.0.1:27017',
             host '127.0.0.1',
